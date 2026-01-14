@@ -1,8 +1,14 @@
 <?php
 
-$surname = 'курицын';
-$name = 'денис';
-$patronymic = 'станиславович';
+// Ввод данных с клавиатуры
+echo "Введите фамилию: ";
+$surname = trim(fgets(STDIN));
+
+echo "Введите имя: ";
+$name = trim(fgets(STDIN));
+
+echo "Введите отчество: ";
+$patronymic = trim(fgets(STDIN));
 
 // Первая буква заглавная в каждом слове
 $fullName = mb_convert_case($surname, MB_CASE_TITLE, 'UTF-8') . ' ' 
@@ -23,6 +29,7 @@ $surnameAndInitials = mb_convert_case($surname, MB_CASE_TITLE, 'UTF-8') . ' '
                     . mb_strtoupper($firstLetterName, 'UTF-8') . '.' 
                     . mb_strtoupper($firstLetterPatronymic, 'UTF-8') . '.';
 
+echo "\n";
 echo "Полное имя: '$fullName'\n";
 echo "Фамилия и инициалы: '$surnameAndInitials'\n";
 echo "Аббревиатура: '$fio'\n";
